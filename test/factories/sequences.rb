@@ -20,9 +20,6 @@ FactoryBot.define do
   sequence :avatar do |n|
   	"avatar#{n}"
   end
-  sequence :state do |n|
-  	"state#{n}"
-  end
   sequence :expired_at do |n|
   	"expired_at#{n}"
   end
