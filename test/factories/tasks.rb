@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :task do
     name
     description
-    author_id
-    assignee_id
+    author { nil }
+    assignee { nil }
     expired_at
   end
 end
