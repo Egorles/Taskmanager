@@ -1,9 +1,4 @@
 FactoryBot.define do
-  factory :manager do
-    first_name
-    last_name
-    password
-    email
-    avatar
+  factory :manager, parent: :user do
   end
 end
