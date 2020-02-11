@@ -7,8 +7,8 @@ class Web::SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should post create" do
-    password = generate(:string)
-    user = create(:user, {password: password})
+    password = generate(:password)
+    user = create(:user, { password: password })
     attrs = {
       email: user.email,
       password: password
