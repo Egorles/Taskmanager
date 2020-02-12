@@ -1,6 +1,9 @@
 sudo: required
 services:
   - docker
+language: ruby
+rvm:
+  - 2.6.5
 env:
   - DOCKER_COMPOSE_VERSION=1.22.0
 before_install:
