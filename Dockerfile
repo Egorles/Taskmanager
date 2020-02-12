@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y yarn
 RUN mkdir -p /task_manager
 WORKDIR /task_manager
 COPY Gemfile Gemfile.lock ./
-RUN gem uninstall bundler && gem install bundler -v 1.17.2
 RUN bundle install --jobs 3
 
 COPY . /task_manager
