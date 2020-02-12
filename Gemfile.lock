@@ -256,6 +256,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
+  bundler (>= 1.17.2)
   byebug
   capybara (>= 2.15)
   factory_bot_rails
@@ -281,7 +282,5 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.7.0
 
-BUNDLED WITH
-   1.17.2
