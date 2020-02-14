@@ -1,14 +1,11 @@
 require 'simplecov'
 require 'coveralls'
+Coveralls.wear!('rails')
 
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
   add_filter 'app/secrets'
 end 
-
-require 'coveralls/rake/task'
-Coveralls::RakeTask.new
-task :test_with_coveralls => [:spec, :features, 'coveralls:push']
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
