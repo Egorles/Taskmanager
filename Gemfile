@@ -27,6 +27,11 @@ gem 'simplecov', require: false, group: :test
 gem 'state_machines'
 gem 'state_machines-activerecord'
 
+gem 'kaminari'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'responders'
+gem 'active_model_serializers'
+
 gem "slim-rails"
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
