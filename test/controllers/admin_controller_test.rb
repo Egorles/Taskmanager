@@ -11,9 +11,4 @@ class Admin::UsersControllerTest < ActionDispatch::IntegrationTest
     get admin_user_url(user)
     assert_response :success
   end
-
-  test "should get index" do
-    get admin_users_url
-    assert_response :success
-  end
 end
