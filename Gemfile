@@ -33,6 +33,11 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem "jquery-rails"
 
+gem 'kaminari'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'responders'
+gem 'active_model_serializers'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
