@@ -19,19 +19,15 @@ class Api::V1::TasksControllerTest < ActionController::TestCase
     sign_in(author)
     assignee = create :user
     task_attributes = attributes_for(:task)
-      .merge({ assignee_id: assignee.id })
+      .merge({ author_id: author.id, assignee_id: assignee.id })
     post :create, params: { task: task_attributes, format: :json }
-    p author
-    p assignee
     assert_response :created
-    puts('create3 !!!!!!!!!!!!!!')
 
     data = JSON.parse(response.body)
     created_task = Task.find(data['id'])
 
     assert created_task.present?
     assert_equal task_attributes.stringify_keys, created_task.slice(*task_attributes.keys)
-    puts('create4 !!!!!!!!!!!!!!')
   end
 
   test 'should put update' do
