@@ -23,6 +23,7 @@ class Api::V1::TasksController < Api::V1::ApplicationController
   
   def create
     task = current_user.my_tasks.new(task_params)
+    p (task)
 
     if task.save
       respond_with(task, location: nil)
@@ -52,7 +53,7 @@ class Api::V1::TasksController < Api::V1::ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :author_id, :assignee_id, :state_event)
+    params.require(:task).permit(:name, :description, :assignee_id, :state_event, author_id: current_user)
   end
 
 end 
