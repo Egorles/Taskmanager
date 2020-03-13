@@ -2,11 +2,12 @@ class Api::V1::TasksController < Api::V1::ApplicationController
   def index
     q_params = params[:q] || { s: 'id asc' }
 
-    tasks = Task
+    tasks = Task.all
       .ransack(q_params)
       .result
       .page(params[:page])
       .per(params[:per_page])
+      .includes(:author, :assignee)
 
     json = {
         items: tasks.map { |t| TaskSerializer.new(t).as_json },
@@ -52,7 +53,7 @@ class Api::V1::TasksController < Api::V1::ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :assignee_id, :state_event, author_id: current_user)
+    params.require(:task).permit(:name, :description, :assignee_id, :state_event, :state, author_id: current_user)
   end
 
 end 

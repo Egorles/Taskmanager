@@ -7,6 +7,7 @@
 //= require jquery
 //= require twitter/bootstrap
 //= require_tree .
+//= require js-routes
 
 // $(() => {
 /* Your JavaScript goes here... */
