@@ -2,16 +2,16 @@ import React from 'react';
 import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { fetch } from './Fetch';
 
-export default class EditPopup extends React.Component {
+export default class AddPopup extends React.Component {
   state = {
     name: '',
     description: '',
-      assignee: {
-        id: null,
-        first_name: null,
-        last_name:  null,
-        email: null
-      }
+    assignee: {
+      id: null,
+      first_name: null,
+      last_name:  null,
+      email: null
+    }
   }
 
   handleNameChange = (e) => {
@@ -40,7 +40,8 @@ export default class EditPopup extends React.Component {
   }
 
   render () {
-    return <div>
+    return (
+    <div>
       <Modal show={this.props.show} onHide={this.props.onClose}>
         <Modal.Header closeButton>
           <Modal.Title>
@@ -73,9 +74,10 @@ export default class EditPopup extends React.Component {
 
         <Modal.Footer>
           <Button onClick={this.props.onClose}>Close</Button>
-          <Button bsStyle="primary" onClick={this.handleCardAdd}>Save changes</Button>
+          <Button variant="primary" onClick={this.handleCardAdd}>Save changes</Button>
         </Modal.Footer>
       </Modal>
     </div>
+    );
   }
 }
