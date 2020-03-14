@@ -39,6 +39,10 @@ export default class AddPopup extends React.Component {
     });
   }
 
+  handleAssigneeChange = (value) => {
+    this.setState({ assignee: value });
+  }
+
   render () {
     return (
     <div>
